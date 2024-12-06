@@ -1,0 +1,72 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image: url(../pages/23-cikavih-faktiv-pro-koka-kolu.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper{
+height: 100vh;
+display: flex;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+}
+
+.carousel{
+height: 100px;
+background-color: rgba(53, 10, 10, 0.621);
+display: flex;
+overflow: hidden;
+max-width: 100%;
+position: relative;
+white-space: nowrap;
+
+}
+.carousel::before,
+.carousel::after{
+  content: "";
+position: absolute;
+top: 0;
+background-color: brown;
+z-index: 1;
+width: 200px;
+height: 100%;
+background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+.carousel::before{
+left: 0;
+
+}
+.carousel::after{
+right: 0;
+transform: rotate(180deg);
+}
+.slide{
+display: flex;
+align-items: center;
+height: inherit;
+animation: slideshow 10s linear infinite;
+
+animation-play-state: running;
+
+}
+.slide:hover{
+  animation-play-state: paused;
+}
+@keyframes slideshow {
+  0%{
+transform: translateX(0);
+  }
+  100%{
+transform: translateX(-50%);
+  }
+
+}
+.slide--image{
+  width: auto;
+height: calc(100% - 40px);
+margin: 0 40px;
+}
